@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d188054eba.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>BigFox - Últimos Proyectos</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navigation-menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Páginas</a></li>
+          <li><a href="#">Tienda</a></li>
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#" class="btn-contact">Contáctame</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="main-title">Últimos Proyectos</h1>
+      <div class="filter-section">
+        <button class="btn-filter" data-filter="all">Todos los artículos</button>
+        <button class="btn-filter" data-filter="movil">Aplicación Móvil</button>
+        <button class="btn-filter" data-filter="web">Aplicación Web</button>
+        <button class="btn-filter" data-filter="software">
+          Software Personalizado
+        </button>
+        <button class="btn-filter" data-filter="uiux">UI/UX</button>
+      </div>
+      <div class="project-grid">
+        <div class="project-card" data-category="movil uiux">
+          <img src="imagenes/port7.jpg" alt="Proyecto 1" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">Aplicación Móvil</h3>
+        </div>
+        <div class="project-card large-card" data-category="web uiux">
+          <img src="imagenes/port2.png" alt="Proyecto 2" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">Aplicación Web</h3>
+        </div>
+        <div class="project-card" data-category="movil software">
+          <img src="imagenes/port4.jpg" alt="Proyecto 3" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">Software Personalizado</h3>
+        </div>
+        <div class="project-card" data-category="web uiux">
+          <img src="imagenes/port5.jpg" alt="Proyecto 4" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">UI/UX</h3>
+        </div>
+        <div class="project-card" data-category="movil uiux">
+          <img src="imagenes/port6.jpg" alt="Proyecto 5" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">Aplicación Móvil</h3>
+        </div>
+        <div class="project-card" data-category="web software">
+          <img src="imagenes/port3.jpg" alt="Proyecto 6" />
+          <div class="card-overlay">
+            <i class="fa-brands fa-facebook-messenger"></i>Messenger
+            <span>
+              We work hard on every app to deliver top-notch features with great
+              UI that you won’t we are top provide our service all time any time
+              anyhere so you are should the choose in our best service find
+              anywhere else.
+            </span>
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </div>
+          <h3 class="project-title">Aplicación Web</h3>
+        </div>
+      </div>
+      <button class="btn-view-all">Ver todos los artículos</button>
+    </main>
+    <footer>
+      <p>&copy; 2024 BigFox. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $(".btn-filter").click(function () {
+          $(".btn-filter").removeClass("btn-active");
+          $(this).addClass("btn-active");
+          var filterValue = $(this).attr("data-filter");
+          if (filterValue == "all") {
+            $(".project-card").show();
+          } else {
+            $(".project-card").hide();
+            $(".project-card").each(function () {
+              var categories = $(this).attr("data-category").split(" ");
+              if (categories.includes(filterValue)) {
+                $(this).show();
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
